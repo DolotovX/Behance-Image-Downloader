@@ -24,7 +24,26 @@
 - [ChromeDriver](https://sites.google.com/chromium.org/driver/) (версия должна соответствовать установленному Chrome)
 - Библиотека requests
 
-Установка зависимостей:
+
+## Обучение и расширение функционала
+
+### Как добавить новую категорию проекта
+
+Чтобы добавить поддержку новой категории проекта (например, "portfolio", "design", "photography" и др.) необходимо:
+
+1. Добавить ключевые слова для категории в список ключевых слов в коде. Например:
+
+```python
+portfolio_keywords = ["portfolio", "design", "photography"]
+```
+2. Добавить проверку наличия этих ключевых слов в названии проекта и указать новую папку для сохранения:
+```python
+elif any(keyword in project_slug for keyword in portfolio_keywords):
+    target_folder = os.path.join("downloads", "portfolio")
+```
+
+### Установка зависимостей:
 
 ```bash
 pip install selenium requests
+
